@@ -8,45 +8,69 @@ const TOTAL_CAROUSEL_COUNT = TimeLineData.length;
 
 const Timeline = () => {
   const [activeItem, setActiveItem] = useState(0);
-  const carouselRef = useRef();
+  const carouselRef = useRef(null);
 
   const scroll = (node, left) => {
-    return node.scrollTo({ left, behavior: 'smooth' });
-  }
+    if (!node || typeof node.scrollTo !== 'function') {
+      return;
+    }
+    node.scrollTo({ left, behavior: 'smooth' });
+  };
 
   const handleClick = (e, i) => {
     e.preventDefault();
-
-    if (carouselRef.current) {
-      const scrollLeft = Math.floor(carouselRef.current.scrollWidth * 0.7 * (i / TimeLineData.length));
-      
-      scroll(carouselRef.current, scrollLeft);
+    const node = carouselRef.current;
+    if (!node) {
+      return;
     }
-  }
+
+    const scrollLeft = Math.floor(
+      node.scrollWidth * 0.7 * (i / TimeLineData.length)
+    );
+    scroll(node, scrollLeft);
+  };
 
   const handleScroll = () => {
-    if (carouselRef.current) {
-      const index = Math.round((carouselRef.current.scrollLeft / (carouselRef.current.scrollWidth * 0.7)) * TimeLineData.length);
-
-      setActiveItem(index);
+    const node = carouselRef.current;
+    if (!node) {
+      return;
     }
-  }
+    const index = Math.round(
+      (node.scrollLeft / (node.scrollWidth * 0.7)) * TimeLineData.length
+    );
+    setActiveItem(index);
+  };
 
-  // snap back to beginning of scroll when window is resized
-  // avoids a bug where content is covered up if coming from smaller screen
   useEffect(() => {
-    const handleResize = () => {
-      scroll(carouselRef.current, 0);
+    const node = carouselRef.current;
+    if (!node) {
+      return;
     }
+
+    const handleResize = () => {
+      const currentNode = carouselRef.current;
+      if (!currentNode) {
+        return;
+      }
+      scroll(currentNode, 0);
+    };
 
     window.addEventListener('resize', handleResize);
-  }, []);
+    return () => 
+      { 
+        window.removeEventListener('resize', handleResize);
+      };
+  }, [carouselRef.current]);
 
   return (
     <Section id="about">
       <SectionTitle>About Me</SectionTitle>
       <SectionText>
-      The purpose of JavaScript Mastery is to help aspiring and established developers to take their development skills to the next level and build awesome apps.
+      Hello, I'm Shaun! A Backend Engineer at DBS Bank building scalable services for the new Internet Banking platform. 
+      Before pivoting to the Tech industry, my journey began as a Naval Engineering Officer in the Republic of Singapore Navy, where I honed discipline, leadership, and problem-solving under pressure. 
+      I hold a Bachelor of Engineering (Honours) in Systems Engineering (ElectroMechanical) at SIT/University of Glasgow and graduated from the TFIP 2024 Immersion Programme, with a Diploma in Full-Stack Development with Java. 
+      Today, I now leverage Java, Spring Boot, React, and Next.js to design end-to-end solutions. 
+      Outside of work, you’ll find me on the rugby field, lifting weights, or tinkering with side projects to enhance and improve my skills.      
       </SectionText>
       <CarouselContainer ref={carouselRef} onScroll={handleScroll}>
         <>

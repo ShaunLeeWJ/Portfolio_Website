@@ -10,10 +10,12 @@ const Hero = (props) => (
       <LeftSection>
         <SectionTitle main center>
           Welcome To <br />
-          My Personal Portfolio
+          My Personal Portfolio!
         </SectionTitle>
         <SectionText>
-        The purpose of JavaScript Mastery is to help aspiring and established developers to take their development skills to the next level and build awesome apps.
+          Hello I’m Shaun! A passionate software engineer in Singapore currently building scalable backend services for DBS Bank’s Internet Banking platform. 
+          Feel free to explore my work—projects showcasing my skills in backend architecture, frontend design, and end-to-end deployment.
+          If you'd like to collaborate or learn more about my work, don't hesitate to get in touch!
         </SectionText>
         <Button onClick={props.handleClick}>Learn More</Button>
       </LeftSection>

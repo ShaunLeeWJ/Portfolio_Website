@@ -38,9 +38,9 @@ export const projects = [
 ];
 
 export const TimeLineData = [
-  { year: 2017, text: 'Started my journey', },
-  { year: 2018, text: 'Worked as a freelance developer', },
-  { year: 2019, text: 'Founded JavaScript Mastery', },
-  { year: 2020, text: 'Shared my projects with the world', },
-  { year: 2021, text: 'Started my own platform', },
+  { year: 2017, text: "Graduated Bachelor of Engineering (Honours) in Systems Engineering (ElectroMechanical) from SIT/University of Glasgow" },
+  { year: 2018, text: "Commissioned and served as a Naval Engineering Officer in the Republic of Singapore Navy" },
+  { year: 2023, text: "Worked as a Application Specialist that supported and optimized enterprise HR e-business solutions."},
+  { year: 2023, text: "Completed TFIP Immersion Programme (Diploma in Full-Stack Development with Java)" },
+  { year: 2024, text: "Joined DBS Bank as a Backend Engineer, building scalable Internet Banking services" },
 ];

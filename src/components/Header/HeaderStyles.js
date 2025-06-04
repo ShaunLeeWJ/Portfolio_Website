@@ -26,13 +26,23 @@ export const Div1 = styled.div`
     grid-area: 1 / 1 / 2 / 3;
   }
 `;
-export const Div2 = styled.div`
-  grid-area: 1 / 2 / 2 / 4;
+// export const Div2 = styled.div`
+//   grid-area: 1 / 2 / 2 / 4;
+//   display: flex;
+//   justify-content: space-around;
+//   @media ${(props) => props.theme.breakpoints.sm} {
+//     grid-area: 2 / 2 / 3 / 5;
+//   }
+// `;
+export const Div2 = styled.ul`
   display: flex;
-  justify-content: space-around;
-  @media ${(props) => props.theme.breakpoints.sm} {
-    grid-area: 2 / 2 / 3 / 5;
-  }
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  /* space between each <li> */
+  gap: 2rem; /* adjust as desired */
 `;
 export const Div3 = styled.div`
   grid-area: 1 / 5 / 2 / 6;
