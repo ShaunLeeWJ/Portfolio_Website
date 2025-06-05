@@ -1,6 +1,7 @@
 import React from 'react';
+import Link from 'next/dist/client/link';
 
-import { Section, SectionDivider, SectionTitle } from '../../styles/GlobalComponents';
+import { ButtonBack, Section, SectionDivider, SectionTitle, ButtonFront } from '../../styles/GlobalComponents';
 import { Box, Boxes, BoxNum, BoxText } from './AcomplishmentsStyles';
 
 const data = [
@@ -12,15 +13,22 @@ const data = [
 
 const Acomplishments = () => (
   <Section>
-    <SectionTitle>Personal Achievements</SectionTitle>
-    <Boxes>
-      {data.map((card, index) => (
+    <SectionTitle>My Resume</SectionTitle>
+    {/* <Boxes> */}
+      {/* {data.map((card, index) => (
         <Box key={index}>
           <BoxNum>{`${card.number}+`}</BoxNum>
           <BoxText>{card.text}</BoxText>
         </Box>
-      ))}
-    </Boxes>
+      ))} */}
+    {/* </Boxes> */}
+
+    <Link href="/pdf/Shaun_Lee_Wei_Jie_CV_Software_Template.pdf" passHref>
+      <a target="_blank" rel="noopener noreferrer">
+        <ButtonBack>Download Resume</ButtonBack>
+      </a>
+    </Link>
+
     <SectionDivider/>
   </Section>
 );

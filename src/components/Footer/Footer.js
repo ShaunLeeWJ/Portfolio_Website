@@ -22,7 +22,7 @@ const Footer = () => {
 
       <SocialIconsContainer>
         <CompanyContainer>
-          <Slogan>Innovating one project at a time</Slogan>
+          <Slogan>Where Creativity Meets Logic.</Slogan>
         </CompanyContainer>
         <SocialContainer>
           <SocialIcons href="https://github.com/ShaunLeeWJ">
@@ -31,7 +31,7 @@ const Footer = () => {
           <SocialIcons href="https://www.linkedin.com/in/shaunleeweijie/">
             <AiFillLinkedin size="3rem" />
           </SocialIcons>
-          <SocialIcons href="https://drive.google.com/file/d/1KJ8PvdFrF5vyaS2aeRk_7lhsBrldQ0F-/view?usp=sharing">
+          <SocialIcons href="/pdf/Shaun_Lee_Wei_Jie_CV_Software_Template.pdf">
             <AiFillFile size="3rem" />
           </SocialIcons>
         </SocialContainer>
