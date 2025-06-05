@@ -17,7 +17,7 @@ const Hero = (props) => (
           Feel free to explore my work—projects showcasing my skills in backend architecture, frontend design, and end-to-end deployment.
           If you'd like to collaborate or learn more about my work, don't hesitate to get in touch!
         </SectionText>
-        <Button onClick={props.handleClick}>Learn More</Button>
+        {/* <Button onClick={props.handleClick}>Learn More</Button> */}
       </LeftSection>
     </Section>
   </>
